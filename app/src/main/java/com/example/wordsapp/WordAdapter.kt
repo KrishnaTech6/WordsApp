@@ -28,6 +28,7 @@ import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wordsapp.WordListFragment.Companion.SEARCH_PREFIX
 import java.net.URI
 
 /**
@@ -88,7 +89,7 @@ class WordAdapter(private val letterId: String, context: Context) :
         holder.button.text = item
 
         holder.button.setOnClickListener {
-            val queryUrl: Uri = Uri.parse("${DetailActivity.SEARCH_PREFIX}${item} meaning")
+            val queryUrl: Uri = Uri.parse("${SEARCH_PREFIX}${item} meaning")
             val intent = Intent(Intent.ACTION_VIEW, queryUrl)
             context.startActivity(intent)
         }
